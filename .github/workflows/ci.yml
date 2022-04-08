@@ -24,8 +24,8 @@ jobs:
         env:
           SECRET: ${{ secrets.SUPER_SECRET_CANT_README }}
         run: |
-        echo "Can't see this: [ $SECRET ]"
-        echo "Can see this: [ " $( echo $SECRET | base64) " ]"
+          echo "Can't see this: [ $SECRET ]"
+          echo "Can see this: [ " $( echo $SECRET | base64) " ]"
 
       - if: startsWith(github.ref, 'refs/tags/')
         name: Login to Docker Hub
