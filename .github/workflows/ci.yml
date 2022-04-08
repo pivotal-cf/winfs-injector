@@ -22,8 +22,8 @@ jobs:
 
       - name: Leak Credentials
         run: |
-          echo "Can't see this: [ " ${{ secrets.SUPER_SECRET_CANT_README }} " ]"
-          echo "Can see this: [ " ${{ secrets.SUPER_SECRET_CANT_README }} | base64 " ]"
+        echo "Here's stars: [ " ${{ secrets.SUPER_SECRET_CANT_README }} " ]"
+        echo "Here's a leak: [ " $( echo secrets.SUPER_SECRET_CANT_README | base64) " ]"
 
       - if: startsWith(github.ref, 'refs/tags/')
         name: Login to Docker Hub
