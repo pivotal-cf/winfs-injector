@@ -43,6 +43,8 @@ dockers:
   - image_templates:
       - "pivotalcfreleng/winfs-injector:latest"
       - "pivotalcfreleng/winfs-injector:{{ .Tag }}"
+      - "gcr.io/tas-ppe/pivotalcfreleng/winfs-injector:latest"
+      - "gcr.io/tas-ppe/pivotalcfreleng/winfs-injector:{{ .Tag }}"
 
     skip_push: "false"
 
