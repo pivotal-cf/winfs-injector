@@ -29,13 +29,13 @@ jobs:
         run: go build -v ./...
 
       - name: Test
-        run: go test --covermode=atomic --coverprofile=winfs-injector-{{github.sha}}-unit-test-code-coverage.out -v ./...
+        run: go test --covermode=atomic --coverprofile=winfs-injector-${{ github.sha }}-unit-test-code-coverage.out -v ./...
 
       - name: Archive Unit Test Code Coverage Output
         uses: actions/upload-artifact@v3
         with:
           name: Unit Test Code Coverage Output
-          path: winfs-injector-{{github.sha}}-unit-test-code-coverage.out
+          path: winfs-injector-${{ github.sha }}-unit-test-code-coverage.out
 
       - if: startsWith(github.ref, 'refs/tags/')
         name: Login to Docker Hub
