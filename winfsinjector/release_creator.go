@@ -1,7 +1,6 @@
 package winfsinjector
 
 import (
-	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -49,7 +48,7 @@ func (rc ReleaseCreator) CreateRelease(releaseName, imageName, releaseDir, tarba
 	}
 
 	// bosh create-release adds ~7GB of temp files that should be cleaned up
-	tmpDir, err := ioutil.TempDir("", "winfs-create-release")
+	tmpDir, err := os.MkdirTemp("", "winfs-create-release")
 	if err != nil {
 		return err
 	}

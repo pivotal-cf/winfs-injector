@@ -2,7 +2,7 @@ package tile
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 	"path/filepath"
 
@@ -37,7 +37,7 @@ func (i TileInjector) AddReleaseToMetadata(releasePath, releaseName, releaseVers
 	}
 	defer f.Close()
 
-	data, err := ioutil.ReadAll(f)
+	data, err := io.ReadAll(f)
 	if err != nil {
 		return err
 	}
@@ -59,5 +59,5 @@ func (i TileInjector) AddReleaseToMetadata(releasePath, releaseName, releaseVers
 		return err
 	}
 
-	return ioutil.WriteFile(metadataFilePath, contents, 0644)
+	return os.WriteFile(metadataFilePath, contents, 0644)
 }

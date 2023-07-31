@@ -3,7 +3,7 @@ package winfsinjector_test
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 	"path/filepath"
 
@@ -39,7 +39,7 @@ var _ = Describe("application", func() {
 			outputTile = "/path/to/output/tile"
 			registry = "/path/to/docker/registry"
 
-			workingDir, err = ioutil.TempDir("", "")
+			workingDir, err = os.MkdirTemp("", "")
 			Expect(err).ToNot(HaveOccurred())
 
 			embedFilePath := fmt.Sprintf("%s/extracted-tile/embed", workingDir)
@@ -246,7 +246,7 @@ windows2019fs/windows2016fs-MISSING-IMAGE-TAG.tgz:
 				w.Close()
 
 				Expect(err).ToNot(HaveOccurred())
-				stdout, _ := ioutil.ReadAll(r)
+				stdout, _ := io.ReadAll(r)
 				Expect(string(stdout)).To(ContainSubstring("The file system has already been injected in the tile; skipping injection"))
 			})
 		})

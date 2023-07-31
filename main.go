@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 
@@ -44,7 +43,7 @@ func main() {
 	var zipper = tile.NewZipper()
 	var releaseCreator = winfsinjector.ReleaseCreator{}
 
-	wd, err := ioutil.TempDir("", "")
+	wd, err := os.MkdirTemp("", "")
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -2,7 +2,7 @@ package tile_test
 
 import (
 	"archive/zip"
-	"io/ioutil"
+	"io"
 	"os"
 	"path/filepath"
 
@@ -23,19 +23,19 @@ var _ = Describe("Zipper", func() {
 			zipper = tile.NewZipper()
 
 			var err error
-			srcDir, err = ioutil.TempDir("", "")
+			srcDir, err = os.MkdirTemp("", "")
 			Expect(err).NotTo(HaveOccurred())
 
-			zipFile, err = ioutil.TempFile("", "")
+			zipFile, err = os.CreateTemp("", "")
 			Expect(err).NotTo(HaveOccurred())
 
-			err = ioutil.WriteFile(filepath.Join(srcDir, "top-level-file"), []byte("foo"), os.FileMode(0644))
+			err = os.WriteFile(filepath.Join(srcDir, "top-level-file"), []byte("foo"), os.FileMode(0644))
 			Expect(err).NotTo(HaveOccurred())
 
 			err = os.Mkdir(filepath.Join(srcDir, "second-level-dir"), os.FileMode(0755))
 			Expect(err).NotTo(HaveOccurred())
 
-			err = ioutil.WriteFile(filepath.Join(srcDir, "second-level-dir", "second-level-file"), []byte("bar"), os.FileMode(0644))
+			err = os.WriteFile(filepath.Join(srcDir, "second-level-dir", "second-level-file"), []byte("bar"), os.FileMode(0644))
 			Expect(err).NotTo(HaveOccurred())
 		})
 
@@ -60,8 +60,8 @@ var _ = Describe("Zipper", func() {
 			Expect(actualZip.File).To(HaveLen(3))
 
 			fileAssertions := map[string]string{
-				"top-level-file":                                       "foo",
-				"second-level-dir":                                     "",
+				"top-level-file":   "foo",
+				"second-level-dir": "",
 				filepath.Join("second-level-dir", "second-level-file"): "bar",
 			}
 
@@ -71,7 +71,7 @@ var _ = Describe("Zipper", func() {
 
 				defer openedFile.Close()
 
-				fileContents, err := ioutil.ReadAll(openedFile)
+				fileContents, err := io.ReadAll(openedFile)
 				Expect(err).NotTo(HaveOccurred())
 				Expect(string(fileContents)).To(Equal(fileAssertions[f.Name]))
 			}
@@ -105,7 +105,7 @@ var _ = Describe("Zipper", func() {
 			inputTile = filepath.Join("fixtures", "test.zip")
 
 			var err error
-			destDir, err = ioutil.TempDir("", "")
+			destDir, err = os.MkdirTemp("", "")
 			Expect(err).NotTo(HaveOccurred())
 		})
 

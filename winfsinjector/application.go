@@ -3,7 +3,6 @@ package winfsinjector
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -15,7 +14,7 @@ import (
 )
 
 var (
-	readFile  = ioutil.ReadFile
+	readFile  = os.ReadFile
 	removeAll = os.RemoveAll
 )
 
