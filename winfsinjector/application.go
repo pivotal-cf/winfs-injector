@@ -71,7 +71,7 @@ func (a Application) Run(inputTile, outputTile, registry, workingDir string) err
 
 	embeddedReleaseDir := filepath.Join(extractedTileDir, "embed/windowsfs-release")
 	if _, err := os.Stat(embeddedReleaseDir); os.IsNotExist(err) {
-		fmt.Println("The file system has already been injected in the tile; skipping injection")
+		fmt.Println("No file system found or the file system has already been injected in the tile; skipping injection")
 		return nil
 	}
 	releaseVersion, err := a.extractReleaseVersion(embeddedReleaseDir)
