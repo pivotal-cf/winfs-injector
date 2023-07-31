@@ -247,7 +247,7 @@ windows2019fs/windows2016fs-MISSING-IMAGE-TAG.tgz:
 
 				Expect(err).ToNot(HaveOccurred())
 				stdout, _ := io.ReadAll(r)
-				Expect(string(stdout)).To(ContainSubstring("The file system has already been injected in the tile; skipping injection"))
+				Expect(string(stdout)).To(ContainSubstring("No file system found or the file system has already been injected in the tile; skipping injection"))
 			})
 		})
 
