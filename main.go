@@ -13,11 +13,11 @@ import (
 const usageText = `winfs-injector injects the Windows 2016 root file system into the Windows 2016 Runtime Tile.
 
 Usage: winfs-injector
-  --input-tile, -i			path to input tile (example: /path/to/input.pivotal)
-  --output-tile, -o			path to output tile (example: /path/to/output.pivotal)
+  --input-tile, -i		path to input tile (example: /path/to/input.pivotal)
+  --output-tile, -o		path to output tile (example: /path/to/output.pivotal)
   --preserve-extracted, -p	preserve the files created during the tile extraction process (useful for debugging)
-  --registry, -r			path to docker registry (example: /path/to/registry, default: "https://registry.hub.docker.com")
-  --help, -h				prints this usage information
+  --registry, -r		path to docker registry (example: /path/to/registry, default: "https://registry.hub.docker.com")
+  --help, -h			prints this usage information
 `
 
 func main() {
