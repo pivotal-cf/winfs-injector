@@ -1,7 +1,6 @@
 package winfsinjector
 
 import (
-	"io/ioutil"
 	"os"
 )
 
@@ -10,7 +9,7 @@ func SetReadFile(f func(string) ([]byte, error)) {
 }
 
 func ResetReadFile() {
-	readFile = ioutil.ReadFile
+	readFile = os.ReadFile
 }
 
 func SetRemoveAll(f func(string) error) {

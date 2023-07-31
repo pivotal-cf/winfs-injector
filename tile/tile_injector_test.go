@@ -1,7 +1,6 @@
 package tile_test
 
 import (
-	"io/ioutil"
 	"os"
 	"path/filepath"
 
@@ -30,11 +29,11 @@ var _ = Describe("TileInjector", func() {
 		releaseVersion = "1.2.3"
 
 		var err error
-		baseTmpDir, err = ioutil.TempDir("", "")
+		baseTmpDir, err = os.MkdirTemp("", "")
 		Expect(err).NotTo(HaveOccurred())
 
 		releasePath = filepath.Join(baseTmpDir, "some-release.tgz")
-		err = ioutil.WriteFile(releasePath, []byte("something"), 0644)
+		err = os.WriteFile(releasePath, []byte("something"), 0644)
 		Expect(err).NotTo(HaveOccurred())
 
 		tileDir = filepath.Join(baseTmpDir, "some-tile")
@@ -42,18 +41,18 @@ var _ = Describe("TileInjector", func() {
 		Expect(err).NotTo(HaveOccurred())
 
 		initialMetadataPath := filepath.Join("fixtures", "initial_metadata.yml")
-		initialMetadataContents, err := ioutil.ReadFile(initialMetadataPath)
+		initialMetadataContents, err := os.ReadFile(initialMetadataPath)
 		Expect(err).NotTo(HaveOccurred())
 
 		err = os.Mkdir(filepath.Join(tileDir, "metadata"), 0755)
 		Expect(err).NotTo(HaveOccurred())
 
 		metadataPath = filepath.Join(tileDir, "metadata", "some-product-metadata.yml")
-		err = ioutil.WriteFile(metadataPath, initialMetadataContents, 0644)
+		err = os.WriteFile(metadataPath, initialMetadataContents, 0644)
 		Expect(err).NotTo(HaveOccurred())
 
 		expectedMetadataPath := filepath.Join("fixtures", "expected_metadata.yml")
-		expectedMetadataContents, err := ioutil.ReadFile(expectedMetadataPath)
+		expectedMetadataContents, err := os.ReadFile(expectedMetadataPath)
 		Expect(err).NotTo(HaveOccurred())
 
 		err = yaml.Unmarshal(expectedMetadataContents, &expectedMetadata)
@@ -71,7 +70,7 @@ var _ = Describe("TileInjector", func() {
 			err := tileInjector.AddReleaseToMetadata(releasePath, releaseName, releaseVersion, tileDir)
 			Expect(err).NotTo(HaveOccurred())
 
-			rawMetadata, err := ioutil.ReadFile(metadataPath)
+			rawMetadata, err := os.ReadFile(metadataPath)
 			Expect(err).NotTo(HaveOccurred())
 
 			var actualMetadata tile.Metadata
@@ -97,7 +96,7 @@ var _ = Describe("TileInjector", func() {
 			})
 
 			It("returns an error when metadata contains malformed yaml", func() {
-				err := ioutil.WriteFile(metadataPath, []byte("%%%%"), 0644)
+				err := os.WriteFile(metadataPath, []byte("%%%%"), 0644)
 				Expect(err).NotTo(HaveOccurred())
 
 				err = tileInjector.AddReleaseToMetadata(releasePath, releaseName, releaseVersion, tileDir)
@@ -106,7 +105,7 @@ var _ = Describe("TileInjector", func() {
 
 			It("returns an error when multiple yaml files exist in the metadata directory", func() {
 				secondMetadataPath := filepath.Join(filepath.Dir(metadataPath), "second.yml")
-				err := ioutil.WriteFile(secondMetadataPath, []byte("{}"), 0644)
+				err := os.WriteFile(secondMetadataPath, []byte("{}"), 0644)
 				Expect(err).NotTo(HaveOccurred())
 
 				err = tileInjector.AddReleaseToMetadata(releasePath, releaseName, releaseVersion, tileDir)

@@ -3,7 +3,7 @@ package winfsinjector_test
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 	"path/filepath"
 
@@ -39,7 +39,7 @@ var _ = Describe("application", func() {
 			outputTile = "/path/to/output/tile"
 			registry = "/path/to/docker/registry"
 
-			workingDir, err = ioutil.TempDir("", "")
+			workingDir, err = os.MkdirTemp("", "")
 			Expect(err).ToNot(HaveOccurred())
 
 			embedFilePath := fmt.Sprintf("%s/extracted-tile/embed", workingDir)
@@ -228,6 +228,33 @@ windows2019fs/windows2016fs-MISSING-IMAGE-TAG.tgz:
 			})
 		})
 
+		Context("when windowsfs-release is already embedded in the tile", func() {
+			BeforeEach(func() {
+				releaseDir := fmt.Sprintf("%s/extracted-tile/releases", workingDir)
+				os.MkdirAll(releaseDir, os.ModePerm)
+
+				tarballPath := filepath.Join(releaseDir, "/windows2019fs-9.3.6.tgz")
+				os.WriteFile(tarballPath, []byte("windows"), 0644)
+			})
+
+			It("does not return an error and exits", func() {
+				var err error
+				r, w, _ := os.Pipe()
+				tmp := os.Stdout
+				defer func() {
+					os.Stdout = tmp
+				}()
+				os.Stdout = w
+
+				err = app.Run(inputTile, outputTile, registry, workingDir)
+				w.Close()
+
+				Expect(err).ToNot(HaveOccurred())
+				stdout, _ := io.ReadAll(r)
+				Expect(string(stdout)).To(ContainSubstring("File system has already been injected in the tile; skipping injection"))
+			})
+		})
+
 		Context("when windowsfs-release is not embedded in the tile from being previously hydrated", func() {
 			BeforeEach(func() {
 				embedFilePath := fmt.Sprintf("%s/extracted-tile/embed", workingDir)
@@ -246,8 +273,8 @@ windows2019fs/windows2016fs-MISSING-IMAGE-TAG.tgz:
 				w.Close()
 
 				Expect(err).ToNot(HaveOccurred())
-				stdout, _ := ioutil.ReadAll(r)
-				Expect(string(stdout)).To(ContainSubstring("The file system has already been injected in the tile; skipping injection"))
+				stdout, _ := io.ReadAll(r)
+				Expect(string(stdout)).To(ContainSubstring("No file system found; skipping injection"))
 			})
 		})
 

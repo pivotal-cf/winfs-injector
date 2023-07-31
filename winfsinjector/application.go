@@ -3,7 +3,6 @@ package winfsinjector
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -15,7 +14,7 @@ import (
 )
 
 var (
-	readFile  = ioutil.ReadFile
+	readFile  = os.ReadFile
 	removeAll = os.RemoveAll
 )
 
@@ -69,11 +68,19 @@ func (a Application) Run(inputTile, outputTile, registry, workingDir string) err
 		return err
 	}
 
-	embeddedReleaseDir := filepath.Join(extractedTileDir, "embed/windowsfs-release")
-	if _, err := os.Stat(embeddedReleaseDir); os.IsNotExist(err) {
-		fmt.Println("The file system has already been injected in the tile; skipping injection")
+	injectedReleaseTarball := filepath.Join(extractedTileDir, "releases/windows*fs*")
+	matches, _ := filepath.Glob(injectedReleaseTarball)
+	if len(matches) > 0 {
+		fmt.Println("File system has already been injected in the tile; skipping injection")
 		return nil
 	}
+
+	embeddedReleaseDir := filepath.Join(extractedTileDir, "embed/windowsfs-release")
+	if _, err := os.Stat(embeddedReleaseDir); os.IsNotExist(err) {
+		fmt.Println("No file system found; skipping injection")
+		return nil
+	}
+
 	releaseVersion, err := a.extractReleaseVersion(embeddedReleaseDir)
 	if err != nil {
 		return err
