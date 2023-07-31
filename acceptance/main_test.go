@@ -46,6 +46,14 @@ var _ = Describe("acceptance", func() {
 			Expect(string(session.Err.Contents())).To(ContainSubstring("--output-tile is required"))
 		})
 
+		It("prints the tile extraction directory when the preserve-extracted flag is provided", func() {
+			cmd = exec.Command(winfsInjector, "-p")
+			session, err := gexec.Start(cmd, GinkgoWriter, GinkgoWriter)
+			Expect(err).NotTo(HaveOccurred())
+			Eventually(session).Should(gexec.Exit(1))
+			Expect(string(session.Out.Contents())).To(ContainSubstring("tile extraction directory"))
+		})
+
 		It("prints usage when the help flag is provided", func() {
 			cmd = exec.Command(winfsInjector, "--help")
 			session, err := gexec.Start(cmd, GinkgoWriter, GinkgoWriter)
