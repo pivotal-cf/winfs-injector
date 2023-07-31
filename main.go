@@ -48,8 +48,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Fprintf(os.Stdout, "tile extraction directory: %s\n", wd)
-	if !arguments.PreserveExtracted {
+	if arguments.PreserveExtracted {
+		fmt.Fprintf(os.Stdout, "tile extraction directory: %s\n", wd)
+	} else {
 		defer os.RemoveAll(wd)
 	}
 
