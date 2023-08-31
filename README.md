@@ -12,7 +12,7 @@ $ winfs-injector \
   --output-tile /path/to/output.pivotal
 ```
 
-Note: On Windows operating systems you will need to use the bsd release of tar, which can be found [here](https://s3.amazonaws.com/bosh-windows-dependencies/tar-1503683828.exe). You should put this executable in your path as `tar.exe` before running the `winfs-injector` tool.
+Note: On Windows operating systems prior to Windows 2019, you will need to use the bsd release of tar, which can be found [here](https://s3.amazonaws.com/bosh-windows-dependencies/tar-1503683828.exe). You should put this executable in your path as `tar.exe` before running the `winfs-injector` tool. On  Windows 2019 and later, tar can be found at `C:\Windows\system32\tar.exe`
 
 ## Building
 
