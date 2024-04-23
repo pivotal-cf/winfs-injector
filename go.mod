@@ -9,7 +9,6 @@ require (
 	code.cloudfoundry.org/hydrator v0.69.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.9.12
 	github.com/cloudfoundry/bosh-utils v0.0.555
-	github.com/jhoonb/archivex v0.0.0-20201016144719-6a343cdae81d
 	github.com/onsi/ginkgo/v2 v2.26.0
 	github.com/onsi/gomega v1.38.2
 	github.com/pivotal-cf/jhanda v0.0.0-20200619200912-8de8eb943a43
