@@ -8,7 +8,6 @@ require (
 	code.cloudfoundry.org/hydrator v0.0.0-20240112153350-a6bf3b70363f
 	github.com/cloudfoundry/bosh-cli/v7 v7.5.2
 	github.com/cloudfoundry/bosh-utils v0.0.426
-	github.com/jhoonb/archivex v0.0.0-20201016144719-6a343cdae81d
 	github.com/mholt/archiver v3.1.1+incompatible
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.31.1
@@ -89,7 +88,6 @@ require (
 	golang.org/x/term v0.16.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
-	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 	google.golang.org/api v0.157.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/genproto v0.0.0-20240122161410-6c6643bf1457 // indirect
