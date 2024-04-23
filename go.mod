@@ -8,7 +8,6 @@ require (
 	code.cloudfoundry.org/hydrator v0.0.0-20240723161051-cae74fb0020a
 	github.com/cloudfoundry/bosh-cli/v7 v7.6.2
 	github.com/cloudfoundry/bosh-utils v0.0.479
-	github.com/jhoonb/archivex v0.0.0-20201016144719-6a343cdae81d
 	github.com/mholt/archiver v3.1.1+incompatible
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.33.1
@@ -20,7 +19,6 @@ require (
 	cloud.google.com/go v0.115.0 // indirect
 	cloud.google.com/go/auth v0.7.2 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.3 // indirect
-	cloud.google.com/go/compute v1.27.3 // indirect
 	cloud.google.com/go/compute/metadata v0.5.0 // indirect
 	cloud.google.com/go/iam v1.1.11 // indirect
 	cloud.google.com/go/storage v1.43.0 // indirect
@@ -50,7 +48,6 @@ require (
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
-	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/s2a-go v0.1.8 // indirect
@@ -91,9 +88,7 @@ require (
 	golang.org/x/term v0.22.0 // indirect
 	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
-	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 	google.golang.org/api v0.189.0 // indirect
-	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/genproto v0.0.0-20240723171418-e6d459c13d2a // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20240723171418-e6d459c13d2a // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240723171418-e6d459c13d2a // indirect
