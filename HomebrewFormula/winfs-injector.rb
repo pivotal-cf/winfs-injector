@@ -5,17 +5,17 @@
 class WinfsInjector < Formula
   desc ""
   homepage ""
-  version "0.25.0"
+  version "0.26.0"
 
   on_macos do
-    url "https://github.com/pivotal-cf/winfs-injector/releases/download/0.25.0/winfs-injector-darwin.tar.gz"
-    sha256 "f1e3920dd0429fdbcce7a68a68766de3ff21408be614ab3c0c3d8a631092f9e4"
+    url "https://github.com/pivotal-cf/winfs-injector/releases/download/0.26.0/winfs-injector-darwin.tar.gz"
+    sha256 "1599873886df48bbb7dc94d40e556c693c92ef82138b267899c6a10e5fd75297"
 
     def install
       bin.install "winfs-injector"
     end
 
-    if Hardware::CPU.arm?
+    on_arm do
       def caveats
         <<~EOS
           The darwin_arm64 architecture is not supported for the WinfsInjector
@@ -27,12 +27,14 @@ class WinfsInjector < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/pivotal-cf/winfs-injector/releases/download/0.25.0/winfs-injector-linux.tar.gz"
-      sha256 "a8dfde2cb4f67998b01d41468d26ae9d823fe3a635d8cbd4601aa00e10e1b535"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/pivotal-cf/winfs-injector/releases/download/0.26.0/winfs-injector-linux.tar.gz"
+        sha256 "46b79620188526e24b5f3b9156920155fbc0578e0444fc0cbea212f7b9ae9b63"
 
-      def install
-        bin.install "winfs-injector"
+        def install
+          bin.install "winfs-injector"
+        end
       end
     end
   end
