@@ -12,7 +12,8 @@ permissions:
   contents: write
 
 jobs:
-  goreleaser:
+  test-and-release:
+    name: Test and Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
