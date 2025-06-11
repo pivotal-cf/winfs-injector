@@ -1,7 +1,8 @@
 module github.com/pivotal-cf/winfs-injector
 
-go 1.22
-toolchain go1.24.1
+go 1.24
+
+toolchain go1.24.4
 
 require (
 	code.cloudfoundry.org/hydrator v0.0.0-20240723161051-cae74fb0020a
