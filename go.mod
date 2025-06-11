@@ -7,7 +7,7 @@ toolchain go1.24.4
 require (
 	code.cloudfoundry.org/hydrator v0.56.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.9.7
-	github.com/cloudfoundry/bosh-utils v0.0.544
+	github.com/cloudfoundry/bosh-utils v0.0.545
 	github.com/jhoonb/archivex v0.0.0-20201016144719-6a343cdae81d
 	github.com/mholt/archiver v3.1.1+incompatible
 	github.com/onsi/ginkgo v1.16.5
