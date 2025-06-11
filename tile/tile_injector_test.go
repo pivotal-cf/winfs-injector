@@ -4,11 +4,11 @@ import (
 	"os"
 	"path/filepath"
 
-	yaml "gopkg.in/yaml.v2"
-
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
 	"github.com/pivotal-cf/winfs-injector/tile"
+
+	. "github.com/onsi/ginkgo/v2"
+	. "github.com/onsi/gomega"
+	yaml "gopkg.in/yaml.v2"
 )
 
 var _ = Describe("TileInjector", func() {

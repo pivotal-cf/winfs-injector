@@ -6,9 +6,10 @@ import (
 	"os"
 	"path/filepath"
 
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
 	"github.com/pivotal-cf/winfs-injector/tile"
+
+	. "github.com/onsi/ginkgo/v2"
+	. "github.com/onsi/gomega"
 )
 
 var _ = Describe("Zipper", func() {
