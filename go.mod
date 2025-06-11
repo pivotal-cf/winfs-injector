@@ -1,11 +1,11 @@
 module github.com/pivotal-cf/winfs-injector
 
-go 1.24
+go 1.24.0
 
 toolchain go1.24.4
 
 require (
-	code.cloudfoundry.org/hydrator v0.0.0-20240723161051-cae74fb0020a
+	code.cloudfoundry.org/hydrator v0.56.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.9.7
 	github.com/cloudfoundry/bosh-utils v0.0.544
 	github.com/jhoonb/archivex v0.0.0-20201016144719-6a343cdae81d
@@ -77,7 +77,7 @@ require (
 	github.com/nwaples/rardecode v1.1.3 // indirect
 	github.com/nxadm/tail v1.4.11 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
-	github.com/opencontainers/image-spec v1.1.0 // indirect
+	github.com/opencontainers/image-spec v1.1.1 // indirect
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/pivotal-cf/paraphernalia v0.0.0-20180203224945-a64ae2051c20 // indirect
 	github.com/planetscale/vtprotobuf v0.6.1-0.20240319094008-0393e58bdf10 // indirect
