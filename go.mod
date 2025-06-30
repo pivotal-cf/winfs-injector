@@ -7,7 +7,7 @@ toolchain go1.24.4
 require (
 	code.cloudfoundry.org/hydrator v0.56.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.9.7
-	github.com/cloudfoundry/bosh-utils v0.0.545
+	github.com/cloudfoundry/bosh-utils v0.0.547
 	github.com/jhoonb/archivex v0.0.0-20201016144719-6a343cdae81d
 	github.com/mholt/archiver v3.1.1+incompatible
 	github.com/onsi/ginkgo/v2 v2.23.4
@@ -26,7 +26,7 @@ require (
 	cloud.google.com/go/monitoring v1.24.2 // indirect
 	cloud.google.com/go/storage v1.55.0 // indirect
 	code.cloudfoundry.org/clock v1.39.0 // indirect
-	code.cloudfoundry.org/tlsconfig v0.28.0 // indirect
+	code.cloudfoundry.org/tlsconfig v0.30.0 // indirect
 	code.cloudfoundry.org/workpool v0.0.0-20241210013132-62cbb12e809b // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp v1.27.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric v0.51.0 // indirect
@@ -43,7 +43,7 @@ require (
 	github.com/cloudfoundry/bosh-s3cli v0.0.366 // indirect
 	github.com/cloudfoundry/config-server v0.1.248 // indirect
 	github.com/cloudfoundry/go-socks5 v0.0.0-20250423223041-4ad5fea42851 // indirect
-	github.com/cloudfoundry/socks5-proxy v0.2.153 // indirect
+	github.com/cloudfoundry/socks5-proxy v0.2.154 // indirect
 	github.com/cncf/xds/go v0.0.0-20250501225837-2ac532fd4443 // indirect
 	github.com/cppforlife/go-patch v0.2.0 // indirect
 	github.com/cppforlife/go-semi-semantic v0.0.0-20160921010311-576b6af77ae4 // indirect
