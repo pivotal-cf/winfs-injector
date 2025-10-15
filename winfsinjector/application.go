@@ -22,34 +22,41 @@ type Application struct {
 	injector       injector
 	releaseCreator releaseCreator
 	zipper         zipper
+	extractor      extractor
 }
 
-//go:generate counterfeiter -o ./fakes/file_info.go --fake-name FileInfo os.FileInfo
+//go:generate counterfeiter -generate
 
-//go:generate counterfeiter -o ./fakes/injector.go --fake-name Injector . injector
+//counterfeiter:generate -o ./fakes/injector.go --fake-name Injector . injector
 
 type injector interface {
 	AddReleaseToMetadata(releasePath, releaseName, releaseVersion, extractedTileDir string) error
 }
 
-//go:generate counterfeiter -o ./fakes/zipper.go --fake-name Zipper . zipper
+//counterfeiter:generate -o ./fakes/zipper.go --fake-name Zipper . zipper
 
 type zipper interface {
 	Zip(dir, zipFile string) error
-	Unzip(zipFile, dest string) error
 }
 
-//go:generate counterfeiter -o ./fakes/release_creator.go --fake-name ReleaseCreator . releaseCreator
+//counterfeiter:generate -o ./fakes/extractor.go --fake-name Extractor . extractor
+
+type extractor interface {
+	Extract(src, dest string) error
+}
+
+//counterfeiter:generate -o ./fakes/release_creator.go --fake-name ReleaseCreator . releaseCreator
 
 type releaseCreator interface {
 	CreateRelease(releaseName, imageName, releaseDir, tarballPath, imageTag, registry, version string) error
 }
 
-func NewApplication(releaseCreator releaseCreator, injector injector, zipper zipper) Application {
+func NewApplication(releaseCreator releaseCreator, injector injector, zipper zipper, extractor extractor) Application {
 	return Application{
 		injector:       injector,
 		releaseCreator: releaseCreator,
 		zipper:         zipper,
+		extractor:      extractor,
 	}
 }
 
@@ -63,7 +70,7 @@ func (a Application) Run(inputTile, outputTile, registry, workingDir string) err
 	}
 
 	extractedTileDir := filepath.Join(workingDir, "extracted-tile")
-	err := a.zipper.Unzip(inputTile, extractedTileDir)
+	err := a.extractor.Extract(inputTile, extractedTileDir)
 	if err != nil {
 		return err
 	}

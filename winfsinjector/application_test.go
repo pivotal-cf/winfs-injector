@@ -20,6 +20,7 @@ var _ = Describe("application", func() {
 			fakeReleaseCreator *fakes.ReleaseCreator
 			fakeInjector       *fakes.Injector
 			fakeZipper         *fakes.Zipper
+			fakeExtractor      *fakes.Extractor
 
 			inputTile  string
 			outputTile string
@@ -35,6 +36,7 @@ var _ = Describe("application", func() {
 			fakeReleaseCreator = new(fakes.ReleaseCreator)
 			fakeInjector = new(fakes.Injector)
 			fakeZipper = new(fakes.Zipper)
+			fakeExtractor = new(fakes.Extractor)
 
 			inputTile = "/path/to/input/tile"
 			outputTile = "/path/to/output/tile"
@@ -70,7 +72,7 @@ windows2019fs/windows2016fs-2019.0.43.tgz:
 			err = os.MkdirAll(embedFilePath+"/windowsfs-release", os.ModePerm)
 			Expect(err).ToNot(HaveOccurred())
 
-			app = winfsinjector.NewApplication(fakeReleaseCreator, fakeInjector, fakeZipper)
+			app = winfsinjector.NewApplication(fakeReleaseCreator, fakeInjector, fakeZipper, fakeExtractor)
 		})
 
 		AfterEach(func() {
@@ -82,9 +84,9 @@ windows2019fs/windows2016fs-2019.0.43.tgz:
 			err := app.Run(inputTile, outputTile, registry, workingDir)
 			Expect(err).NotTo(HaveOccurred())
 
-			Expect(fakeZipper.UnzipCallCount()).To(Equal(1))
+			Expect(fakeExtractor.ExtractCallCount()).To(Equal(1))
 
-			inputTile, extractedTileDir := fakeZipper.UnzipArgsForCall(0)
+			inputTile, extractedTileDir := fakeExtractor.ExtractArgsForCall(0)
 			Expect(inputTile).To(Equal(filepath.Join("/", "path", "to", "input", "tile")))
 			Expect(extractedTileDir).To(Equal(fmt.Sprintf("%s%s", workingDir, filepath.Join("/", "extracted-tile"))))
 		})
@@ -110,7 +112,7 @@ windows2019fs/windows2016fs-2019.0.43.tgz:
 			Expect(err).NotTo(HaveOccurred())
 
 			Expect(fakeReleaseCreator.CreateReleaseCallCount()).To(Equal(1))
-			Expect(fakeZipper.UnzipCallCount()).To(Equal(1))
+			Expect(fakeExtractor.ExtractCallCount()).To(Equal(1))
 
 			Expect(fakeInjector.AddReleaseToMetadataCallCount()).To(Equal(1))
 			releasePath, releaseName, releaseVersion, tileDir := fakeInjector.AddReleaseToMetadataArgsForCall(0)
@@ -144,7 +146,7 @@ windows2019fs/windows2016fs-2019.0.43.tgz:
 			Expect(err).NotTo(HaveOccurred())
 
 			Expect(fakeReleaseCreator.CreateReleaseCallCount()).To(Equal(1))
-			Expect(fakeZipper.UnzipCallCount()).To(Equal(1))
+			Expect(fakeExtractor.ExtractCallCount()).To(Equal(1))
 			Expect(fakeInjector.AddReleaseToMetadataCallCount()).To(Equal(1))
 
 			Expect(fakeZipper.ZipCallCount()).To(Equal(1))
@@ -182,10 +184,11 @@ windows2019fs/windows2016fs-MISSING-IMAGE-TAG.tgz:
 			})
 		})
 
-		Context("when the zipper fails to unzip the tile", func() {
+		Context("when the extractor fails to unzip the tile", func() {
 			BeforeEach(func() {
-				fakeZipper.UnzipReturns(errors.New("some-error"))
+				fakeExtractor.ExtractReturns(errors.New("some-error"))
 			})
+
 			It("returns the error", func() {
 				err := app.Run(inputTile, outputTile, registry, workingDir)
 				Expect(err).To(HaveOccurred())

@@ -5,9 +5,11 @@ import (
 	"log"
 	"os"
 
-	"github.com/pivotal-cf/jhanda"
 	"github.com/pivotal-cf/winfs-injector/tile"
 	"github.com/pivotal-cf/winfs-injector/winfsinjector"
+
+	"code.cloudfoundry.org/archiver/extractor"
+	"github.com/pivotal-cf/jhanda"
 )
 
 const usageText = `winfs-injector injects the Windows 2016 root file system into the Windows 2016 Runtime Tile.
@@ -41,6 +43,7 @@ func main() {
 
 	var tileInjector = tile.NewTileInjector()
 	var zipper = tile.NewZipper()
+	var extractor = extractor.NewZip()
 	var releaseCreator = winfsinjector.ReleaseCreator{}
 
 	wd, err := os.MkdirTemp("", "")
@@ -54,7 +57,7 @@ func main() {
 		defer os.RemoveAll(wd)
 	}
 
-	app := winfsinjector.NewApplication(releaseCreator, tileInjector, zipper)
+	app := winfsinjector.NewApplication(releaseCreator, tileInjector, zipper, extractor)
 
 	err = app.Run(arguments.InputTile, arguments.OutputTile, arguments.Registry, wd)
 	if err != nil {
