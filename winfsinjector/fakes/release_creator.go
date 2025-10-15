@@ -6,16 +6,16 @@ import (
 )
 
 type ReleaseCreator struct {
-	CreateReleaseStub        func(releaseName, imageName, releaseDir, tarballPath, imageTag, registry, version string) error
+	CreateReleaseStub        func(string, string, string, string, string, string, string) error
 	createReleaseMutex       sync.RWMutex
 	createReleaseArgsForCall []struct {
-		releaseName string
-		imageName   string
-		releaseDir  string
-		tarballPath string
-		imageTag    string
-		registry    string
-		version     string
+		arg1 string
+		arg2 string
+		arg3 string
+		arg4 string
+		arg5 string
+		arg6 string
+		arg7 string
 	}
 	createReleaseReturns struct {
 		result1 error
@@ -27,27 +27,29 @@ type ReleaseCreator struct {
 	invocationsMutex sync.RWMutex
 }
 
-func (fake *ReleaseCreator) CreateRelease(releaseName string, imageName string, releaseDir string, tarballPath string, imageTag string, registry string, version string) error {
+func (fake *ReleaseCreator) CreateRelease(arg1 string, arg2 string, arg3 string, arg4 string, arg5 string, arg6 string, arg7 string) error {
 	fake.createReleaseMutex.Lock()
 	ret, specificReturn := fake.createReleaseReturnsOnCall[len(fake.createReleaseArgsForCall)]
 	fake.createReleaseArgsForCall = append(fake.createReleaseArgsForCall, struct {
-		releaseName string
-		imageName   string
-		releaseDir  string
-		tarballPath string
-		imageTag    string
-		registry    string
-		version     string
-	}{releaseName, imageName, releaseDir, tarballPath, imageTag, registry, version})
-	fake.recordInvocation("CreateRelease", []interface{}{releaseName, imageName, releaseDir, tarballPath, imageTag, registry, version})
+		arg1 string
+		arg2 string
+		arg3 string
+		arg4 string
+		arg5 string
+		arg6 string
+		arg7 string
+	}{arg1, arg2, arg3, arg4, arg5, arg6, arg7})
+	stub := fake.CreateReleaseStub
+	fakeReturns := fake.createReleaseReturns
+	fake.recordInvocation("CreateRelease", []interface{}{arg1, arg2, arg3, arg4, arg5, arg6, arg7})
 	fake.createReleaseMutex.Unlock()
-	if fake.CreateReleaseStub != nil {
-		return fake.CreateReleaseStub(releaseName, imageName, releaseDir, tarballPath, imageTag, registry, version)
+	if stub != nil {
+		return stub(arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 	}
 	if specificReturn {
 		return ret.result1
 	}
-	return fake.createReleaseReturns.result1
+	return fakeReturns.result1
 }
 
 func (fake *ReleaseCreator) CreateReleaseCallCount() int {
@@ -56,13 +58,22 @@ func (fake *ReleaseCreator) CreateReleaseCallCount() int {
 	return len(fake.createReleaseArgsForCall)
 }
 
+func (fake *ReleaseCreator) CreateReleaseCalls(stub func(string, string, string, string, string, string, string) error) {
+	fake.createReleaseMutex.Lock()
+	defer fake.createReleaseMutex.Unlock()
+	fake.CreateReleaseStub = stub
+}
+
 func (fake *ReleaseCreator) CreateReleaseArgsForCall(i int) (string, string, string, string, string, string, string) {
 	fake.createReleaseMutex.RLock()
 	defer fake.createReleaseMutex.RUnlock()
-	return fake.createReleaseArgsForCall[i].releaseName, fake.createReleaseArgsForCall[i].imageName, fake.createReleaseArgsForCall[i].releaseDir, fake.createReleaseArgsForCall[i].tarballPath, fake.createReleaseArgsForCall[i].imageTag, fake.createReleaseArgsForCall[i].registry, fake.createReleaseArgsForCall[i].version
+	argsForCall := fake.createReleaseArgsForCall[i]
+	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4, argsForCall.arg5, argsForCall.arg6, argsForCall.arg7
 }
 
 func (fake *ReleaseCreator) CreateReleaseReturns(result1 error) {
+	fake.createReleaseMutex.Lock()
+	defer fake.createReleaseMutex.Unlock()
 	fake.CreateReleaseStub = nil
 	fake.createReleaseReturns = struct {
 		result1 error
@@ -70,6 +81,8 @@ func (fake *ReleaseCreator) CreateReleaseReturns(result1 error) {
 }
 
 func (fake *ReleaseCreator) CreateReleaseReturnsOnCall(i int, result1 error) {
+	fake.createReleaseMutex.Lock()
+	defer fake.createReleaseMutex.Unlock()
 	fake.CreateReleaseStub = nil
 	if fake.createReleaseReturnsOnCall == nil {
 		fake.createReleaseReturnsOnCall = make(map[int]struct {

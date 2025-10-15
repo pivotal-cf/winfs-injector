@@ -2,7 +2,7 @@
 package fakes
 
 import (
-	sync "sync"
+	"sync"
 )
 
 type Injector struct {
@@ -33,15 +33,16 @@ func (fake *Injector) AddReleaseToMetadata(arg1 string, arg2 string, arg3 string
 		arg3 string
 		arg4 string
 	}{arg1, arg2, arg3, arg4})
+	stub := fake.AddReleaseToMetadataStub
+	fakeReturns := fake.addReleaseToMetadataReturns
 	fake.recordInvocation("AddReleaseToMetadata", []interface{}{arg1, arg2, arg3, arg4})
 	fake.addReleaseToMetadataMutex.Unlock()
-	if fake.AddReleaseToMetadataStub != nil {
-		return fake.AddReleaseToMetadataStub(arg1, arg2, arg3, arg4)
+	if stub != nil {
+		return stub(arg1, arg2, arg3, arg4)
 	}
 	if specificReturn {
 		return ret.result1
 	}
-	fakeReturns := fake.addReleaseToMetadataReturns
 	return fakeReturns.result1
 }
 

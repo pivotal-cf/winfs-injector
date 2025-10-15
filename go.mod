@@ -5,7 +5,8 @@ go 1.25
 toolchain go1.25.3
 
 require (
-	code.cloudfoundry.org/hydrator v0.68.0
+	code.cloudfoundry.org/archiver v0.50.0
+	code.cloudfoundry.org/hydrator v0.69.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.9.12
 	github.com/cloudfoundry/bosh-utils v0.0.555
 	github.com/jhoonb/archivex v0.0.0-20201016144719-6a343cdae81d
@@ -48,6 +49,7 @@ require (
 	github.com/cncf/xds/go v0.0.0-20251014123835-2ee22ca58382 // indirect
 	github.com/cppforlife/go-patch v0.2.0 // indirect
 	github.com/cppforlife/go-semi-semantic v0.0.0-20160921010311-576b6af77ae4 // indirect
+	github.com/cyphar/filepath-securejoin v0.5.0 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/envoyproxy/go-control-plane/envoy v1.35.0 // indirect
 	github.com/envoyproxy/protoc-gen-validate v1.2.1 // indirect
