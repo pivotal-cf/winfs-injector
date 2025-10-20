@@ -7,7 +7,7 @@ toolchain go1.25.3
 require (
 	code.cloudfoundry.org/archiver v0.50.0
 	code.cloudfoundry.org/hydrator v0.69.0
-	github.com/cloudfoundry/bosh-cli/v7 v7.9.12
+	github.com/cloudfoundry/bosh-cli/v7 v7.9.13
 	github.com/cloudfoundry/bosh-utils v0.0.555
 	github.com/onsi/ginkgo/v2 v2.26.0
 	github.com/onsi/gomega v1.38.2
@@ -38,13 +38,13 @@ require (
 	github.com/charlievieth/fs v0.0.3 // indirect
 	github.com/cheggaaa/pb/v3 v3.1.7 // indirect
 	github.com/clipperhouse/uax29/v2 v2.2.0 // indirect
-	github.com/cloudfoundry/bosh-agent/v2 v2.765.0 // indirect
+	github.com/cloudfoundry/bosh-agent/v2 v2.769.0 // indirect
 	github.com/cloudfoundry/bosh-davcli v0.0.437 // indirect
 	github.com/cloudfoundry/bosh-gcscli v0.0.333 // indirect
 	github.com/cloudfoundry/bosh-s3cli v0.0.382 // indirect
 	github.com/cloudfoundry/config-server v0.1.256 // indirect
 	github.com/cloudfoundry/go-socks5 v0.0.0-20250423223041-4ad5fea42851 // indirect
-	github.com/cloudfoundry/socks5-proxy v0.2.156 // indirect
+	github.com/cloudfoundry/socks5-proxy v0.2.157 // indirect
 	github.com/cncf/xds/go v0.0.0-20251014123835-2ee22ca58382 // indirect
 	github.com/cppforlife/go-patch v0.2.0 // indirect
 	github.com/cppforlife/go-semi-semantic v0.0.0-20160921010311-576b6af77ae4 // indirect
