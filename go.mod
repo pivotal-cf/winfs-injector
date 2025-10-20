@@ -8,7 +8,7 @@ require (
 	code.cloudfoundry.org/archiver v0.50.0
 	code.cloudfoundry.org/hydrator v0.69.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.9.12
-	github.com/cloudfoundry/bosh-utils v0.0.555
+	github.com/cloudfoundry/bosh-utils v0.0.556
 	github.com/onsi/ginkgo/v2 v2.26.0
 	github.com/onsi/gomega v1.38.2
 	github.com/pivotal-cf/jhanda v0.0.0-20200619200912-8de8eb943a43
@@ -44,7 +44,7 @@ require (
 	github.com/cloudfoundry/bosh-s3cli v0.0.382 // indirect
 	github.com/cloudfoundry/config-server v0.1.256 // indirect
 	github.com/cloudfoundry/go-socks5 v0.0.0-20250423223041-4ad5fea42851 // indirect
-	github.com/cloudfoundry/socks5-proxy v0.2.156 // indirect
+	github.com/cloudfoundry/socks5-proxy v0.2.157 // indirect
 	github.com/cncf/xds/go v0.0.0-20251014123835-2ee22ca58382 // indirect
 	github.com/cppforlife/go-patch v0.2.0 // indirect
 	github.com/cppforlife/go-semi-semantic v0.0.0-20160921010311-576b6af77ae4 // indirect
