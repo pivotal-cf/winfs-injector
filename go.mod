@@ -5,11 +5,11 @@ go 1.25
 toolchain go1.25.3
 
 require (
-	code.cloudfoundry.org/archiver v0.50.0
+	code.cloudfoundry.org/archiver v0.51.0
 	code.cloudfoundry.org/hydrator v0.69.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.9.12
 	github.com/cloudfoundry/bosh-utils v0.0.555
-	github.com/onsi/ginkgo/v2 v2.26.0
+	github.com/onsi/ginkgo/v2 v2.27.2
 	github.com/onsi/gomega v1.38.2
 	github.com/pivotal-cf/jhanda v0.0.0-20200619200912-8de8eb943a43
 	go.yaml.in/yaml/v3 v3.0.4
@@ -89,7 +89,6 @@ require (
 	go.opentelemetry.io/otel/sdk v1.38.0 // indirect
 	go.opentelemetry.io/otel/sdk/metric v1.38.0 // indirect
 	go.opentelemetry.io/otel/trace v1.38.0 // indirect
-	go.uber.org/automaxprocs v1.6.0 // indirect
 	golang.org/x/crypto v0.43.0 // indirect
 	golang.org/x/mod v0.29.0 // indirect
 	golang.org/x/net v0.46.0 // indirect
