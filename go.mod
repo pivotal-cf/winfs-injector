@@ -2,7 +2,7 @@ module github.com/pivotal-cf/winfs-injector
 
 go 1.25
 
-toolchain go1.25.3
+toolchain go1.25.7
 
 require (
 	code.cloudfoundry.org/archiver v0.62.0
