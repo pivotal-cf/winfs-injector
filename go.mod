@@ -1,11 +1,11 @@
 module github.com/pivotal-cf/winfs-injector
 
-go 1.25
+go 1.25.0
 
 toolchain go1.25.7
 
 require (
-	code.cloudfoundry.org/archiver v0.62.0
+	code.cloudfoundry.org/archiver v0.64.0
 	code.cloudfoundry.org/hydrator v0.81.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.9.13
 	github.com/cloudfoundry/bosh-utils v0.0.555
@@ -59,7 +59,7 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-task/slim-sprig/v3 v3.0.0 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
-	github.com/google/pprof v0.0.0-20260202012954-cb029daf43ef // indirect
+	github.com/google/pprof v0.0.0-20260302011040-a15ffb7f9dcc // indirect
 	github.com/google/s2a-go v0.1.9 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.6 // indirect
@@ -91,10 +91,10 @@ require (
 	go.opentelemetry.io/otel/trace v1.38.0 // indirect
 	golang.org/x/crypto v0.48.0 // indirect
 	golang.org/x/mod v0.33.0 // indirect
-	golang.org/x/net v0.50.0 // indirect
+	golang.org/x/net v0.51.0 // indirect
 	golang.org/x/oauth2 v0.32.0 // indirect
-	golang.org/x/sync v0.19.0 // indirect
-	golang.org/x/sys v0.41.0 // indirect
+	golang.org/x/sync v0.20.0 // indirect
+	golang.org/x/sys v0.42.0 // indirect
 	golang.org/x/term v0.40.0 // indirect
 	golang.org/x/text v0.34.0 // indirect
 	golang.org/x/time v0.14.0 // indirect
