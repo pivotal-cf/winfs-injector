@@ -1,6 +1,6 @@
 module github.com/pivotal-cf/winfs-injector
 
-go 1.25
+go 1.25.0
 
 toolchain go1.25.7
 
@@ -8,7 +8,7 @@ require (
 	code.cloudfoundry.org/archiver v0.62.0
 	code.cloudfoundry.org/hydrator v0.81.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.9.13
-	github.com/cloudfoundry/bosh-utils v0.0.555
+	github.com/cloudfoundry/bosh-utils v0.0.597
 	github.com/onsi/ginkgo/v2 v2.28.1
 	github.com/onsi/gomega v1.39.1
 	github.com/pivotal-cf/jhanda v0.0.0-20200619200912-8de8eb943a43
@@ -25,7 +25,7 @@ require (
 	cloud.google.com/go/monitoring v1.24.3 // indirect
 	cloud.google.com/go/storage v1.57.0 // indirect
 	code.cloudfoundry.org/clock v1.52.0 // indirect
-	code.cloudfoundry.org/tlsconfig v0.36.0 // indirect
+	code.cloudfoundry.org/tlsconfig v0.47.0 // indirect
 	code.cloudfoundry.org/workpool v0.0.0-20250911194158-1489753f182e // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp v1.30.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric v0.54.0 // indirect
@@ -44,7 +44,7 @@ require (
 	github.com/cloudfoundry/bosh-s3cli v0.0.382 // indirect
 	github.com/cloudfoundry/config-server v0.1.256 // indirect
 	github.com/cloudfoundry/go-socks5 v0.0.0-20250423223041-4ad5fea42851 // indirect
-	github.com/cloudfoundry/socks5-proxy v0.2.157 // indirect
+	github.com/cloudfoundry/socks5-proxy v0.2.170 // indirect
 	github.com/cncf/xds/go v0.0.0-20251022180443-0feb69152e9f // indirect
 	github.com/cppforlife/go-patch v0.2.0 // indirect
 	github.com/cppforlife/go-semi-semantic v0.0.0-20160921010311-576b6af77ae4 // indirect
@@ -59,7 +59,7 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-task/slim-sprig/v3 v3.0.0 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
-	github.com/google/pprof v0.0.0-20260202012954-cb029daf43ef // indirect
+	github.com/google/pprof v0.0.0-20260302011040-a15ffb7f9dcc // indirect
 	github.com/google/s2a-go v0.1.9 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.6 // indirect
@@ -89,16 +89,16 @@ require (
 	go.opentelemetry.io/otel/sdk v1.38.0 // indirect
 	go.opentelemetry.io/otel/sdk/metric v1.38.0 // indirect
 	go.opentelemetry.io/otel/trace v1.38.0 // indirect
-	golang.org/x/crypto v0.48.0 // indirect
-	golang.org/x/mod v0.33.0 // indirect
-	golang.org/x/net v0.50.0 // indirect
+	golang.org/x/crypto v0.49.0 // indirect
+	golang.org/x/mod v0.34.0 // indirect
+	golang.org/x/net v0.52.0 // indirect
 	golang.org/x/oauth2 v0.32.0 // indirect
-	golang.org/x/sync v0.19.0 // indirect
-	golang.org/x/sys v0.41.0 // indirect
-	golang.org/x/term v0.40.0 // indirect
-	golang.org/x/text v0.34.0 // indirect
+	golang.org/x/sync v0.20.0 // indirect
+	golang.org/x/sys v0.42.0 // indirect
+	golang.org/x/term v0.41.0 // indirect
+	golang.org/x/text v0.35.0 // indirect
 	golang.org/x/time v0.14.0 // indirect
-	golang.org/x/tools v0.42.0 // indirect
+	golang.org/x/tools v0.43.0 // indirect
 	google.golang.org/api v0.252.0 // indirect
 	google.golang.org/genproto v0.0.0-20251014184007-4626949a642f // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20251029180050-ab9386a59fda // indirect
