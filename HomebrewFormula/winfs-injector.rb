@@ -5,11 +5,11 @@
 class WinfsInjector < Formula
   desc ""
   homepage ""
-  version "0.30.0"
+  version "0.31.0"
 
   on_macos do
-    url "https://github.com/pivotal-cf/winfs-injector/releases/download/0.30.0/winfs-injector-darwin.tar.gz"
-    sha256 "93be7c79751c0a869131bb04a3c659fa726044f2afdbae156cdce69726169efc"
+    url "https://github.com/pivotal-cf/winfs-injector/releases/download/0.31.0/winfs-injector-darwin.tar.gz"
+    sha256 "881be39e4bbd602feedc8de41c25cce0a34aa3414f184a4ad73d6b2dc4e2f9b9"
 
     define_method(:install) do
       bin.install "winfs-injector"
@@ -28,8 +28,8 @@ class WinfsInjector < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pivotal-cf/winfs-injector/releases/download/0.30.0/winfs-injector-linux.tar.gz"
-      sha256 "ebcf496c097c02d9257f913a41088d0593f02cda8b281f58ba160330faabcad4"
+      url "https://github.com/pivotal-cf/winfs-injector/releases/download/0.31.0/winfs-injector-linux.tar.gz"
+      sha256 "157ce9f001da1433e6b614cd9cf270b041597f874cc1899afffb6cc6a930e107"
       define_method(:install) do
         bin.install "winfs-injector"
       end
