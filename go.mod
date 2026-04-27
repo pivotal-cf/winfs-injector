@@ -3,8 +3,8 @@ module github.com/pivotal-cf/winfs-injector
 go 1.25.8
 
 require (
-	code.cloudfoundry.org/archiver v0.62.0
-	code.cloudfoundry.org/hydrator v0.81.0
+	code.cloudfoundry.org/archiver v0.67.0
+	code.cloudfoundry.org/hydrator v0.88.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.10.3
 	github.com/cloudfoundry/bosh-utils v0.0.607
 	github.com/onsi/ginkgo/v2 v2.28.1
@@ -117,7 +117,7 @@ require (
 	google.golang.org/api v0.274.0 // indirect
 	google.golang.org/genproto v0.0.0-20260401024825-9d38bb4040a9 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260401024825-9d38bb4040a9 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20260401024825-9d38bb4040a9 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20260420184626-e10c466a9529 // indirect
 	google.golang.org/grpc v1.80.0 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
