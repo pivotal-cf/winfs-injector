@@ -3,7 +3,7 @@ module github.com/pivotal-cf/winfs-injector
 go 1.25.8
 
 require (
-	code.cloudfoundry.org/archiver v0.67.0
+	code.cloudfoundry.org/archiver v0.69.0
 	code.cloudfoundry.org/hydrator v0.88.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.10.3
 	github.com/cloudfoundry/bosh-utils v0.0.607
