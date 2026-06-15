@@ -8,7 +8,7 @@ require (
 	github.com/cloudfoundry/bosh-cli/v7 v7.10.5
 	github.com/cloudfoundry/bosh-utils v0.0.609
 	github.com/onsi/ginkgo/v2 v2.29.0
-	github.com/onsi/gomega v1.41.0
+	github.com/onsi/gomega v1.42.0
 	github.com/pivotal-cf/jhanda v0.0.0-20200619200912-8de8eb943a43
 	go.yaml.in/yaml/v3 v3.0.4
 )
