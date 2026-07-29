@@ -3,14 +3,14 @@ module github.com/pivotal-cf/winfs-injector
 go 1.26.4
 
 require (
-	code.cloudfoundry.org/archiver v0.74.0
+	code.cloudfoundry.org/archiver v0.81.0
 	code.cloudfoundry.org/hydrator v0.93.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.10.5
 	github.com/cloudfoundry/bosh-utils v0.0.630
 	github.com/onsi/ginkgo/v2 v2.32.0
-	github.com/onsi/gomega v1.42.0
+	github.com/onsi/gomega v1.42.1
 	github.com/pivotal-cf/jhanda v0.0.0-20200619200912-8de8eb943a43
-	go.yaml.in/yaml/v3 v3.0.4
+	go.yaml.in/yaml/v3 v3.0.5
 )
 
 require (
@@ -63,7 +63,7 @@ require (
 	github.com/cncf/xds/go v0.0.0-20260202195803-dba9d589def2 // indirect
 	github.com/cppforlife/go-patch v0.2.0 // indirect
 	github.com/cppforlife/go-semi-semantic v0.0.0-20160921010311-576b6af77ae4 // indirect
-	github.com/cyphar/filepath-securejoin v0.6.1 // indirect
+	github.com/cyphar/filepath-securejoin v0.7.0 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/envoyproxy/go-control-plane/envoy v1.37.0 // indirect
 	github.com/envoyproxy/protoc-gen-validate v1.3.3 // indirect
