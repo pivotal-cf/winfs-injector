@@ -24,8 +24,8 @@ code.cloudfoundry.org/archiver v0.81.0 h1:rgKXuUH0mwlB8yep+qNIKqjcoKbevWY0G8O2To
 code.cloudfoundry.org/archiver v0.81.0/go.mod h1:j0ICCxoNIpveqUrxceaMWBhi3yRGxFhFVlFafWMjBfE=
 code.cloudfoundry.org/clock v1.69.0 h1:1hR864FRXyCcjw+1p77iUoxTIDgoXVvhblIsOrXaxOM=
 code.cloudfoundry.org/clock v1.69.0/go.mod h1:+ikbfwCwwAad/NxA3wKkF9BmP4UYID6/gWDZnMtWXjU=
-code.cloudfoundry.org/hydrator v0.93.0 h1:DZvF4/iSkqPpwsdmfoIjkS03igbplqU3mAeBbk/xxW4=
-code.cloudfoundry.org/hydrator v0.93.0/go.mod h1:O98oreDDERdqa/PaHcaELQj9xOg/PEAJYVA020JuZgU=
+code.cloudfoundry.org/hydrator v0.99.0 h1:bJlMRuX4oAVXzmKrCE21NsuhAZUgxmCEu0oL3N7YqjU=
+code.cloudfoundry.org/hydrator v0.99.0/go.mod h1:rSUzc/hXPcL8oN0Q3rrNR2V/Aj36SOJjffkya8rUo7o=
 code.cloudfoundry.org/tlsconfig v0.53.0 h1:ajprkio3g4V+C0AUJt3rXkkA0il+3sQZ9dJMRQ/e7Ug=
 code.cloudfoundry.org/tlsconfig v0.53.0/go.mod h1:DMYiC50mOZC38kVQChNoHvLveqD+xohYJgfO9yusAFk=
 code.cloudfoundry.org/workpool v0.0.0-20250911194158-1489753f182e h1:NsULHptleEmqtoC8j6A8J636L9APnGn8YC0c7vocLww=
@@ -301,8 +301,8 @@ google.golang.org/genproto v0.0.0-20260504160031-60b97b32f348 h1:JjVGDZYWkJWZcxv
 google.golang.org/genproto v0.0.0-20260504160031-60b97b32f348/go.mod h1:95PqD4xM+AdOcBGsmgfaofXsiA37uXDtDufVbntT3TU=
 google.golang.org/genproto/googleapis/api v0.0.0-20260504160031-60b97b32f348 h1:U8orV30l6KpDsi9dxU0CoJZGbjS8EEpw+6ba+XwGPQA=
 google.golang.org/genproto/googleapis/api v0.0.0-20260504160031-60b97b32f348/go.mod h1:Yzdzr5OOZFgSsEV2D/Xi9NL3bszpXFAg0hFJiRohcD8=
-google.golang.org/genproto/googleapis/rpc v0.0.0-20260608224507-4308a22a1bab h1:cY0oV1VnAqvaim8VsR8ZyEKAudzbRJMRGwD3W/L7yOw=
-google.golang.org/genproto/googleapis/rpc v0.0.0-20260608224507-4308a22a1bab/go.mod h1:4Hqkh8ycfw05ld/3BWL7rJOSfebL2Q+DVDeRgYgxUU8=
+google.golang.org/genproto/googleapis/rpc v0.0.0-20260720211330-0afa2a65878a h1:qI/YMH1ep2qQtqcp00gMQyoU7mjvbhg88GJKCvfoLj0=
+google.golang.org/genproto/googleapis/rpc v0.0.0-20260720211330-0afa2a65878a/go.mod h1:4Hqkh8ycfw05ld/3BWL7rJOSfebL2Q+DVDeRgYgxUU8=
 google.golang.org/grpc v1.82.1 h1:NnAxzGRA0677vCa4BUkOAnO5+FfQqVl9iUXeD0IqcGE=
 google.golang.org/grpc v1.82.1/go.mod h1:yzTZ1TB1Z3SG+LIYaI+WiE8D5+PZ3ArnrSp8zF3+/ZA=
 google.golang.org/protobuf v1.36.11 h1:fV6ZwhNocDyBLK0dj+fg8ektcVegBBuEolpbTQyBNVE=

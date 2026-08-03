@@ -4,7 +4,7 @@ go 1.26.4
 
 require (
 	code.cloudfoundry.org/archiver v0.81.0
-	code.cloudfoundry.org/hydrator v0.93.0
+	code.cloudfoundry.org/hydrator v0.99.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.10.5
 	github.com/cloudfoundry/bosh-utils v0.0.630
 	github.com/onsi/ginkgo/v2 v2.32.0
@@ -115,7 +115,7 @@ require (
 	google.golang.org/api v0.278.0 // indirect
 	google.golang.org/genproto v0.0.0-20260504160031-60b97b32f348 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260504160031-60b97b32f348 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20260608224507-4308a22a1bab // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20260720211330-0afa2a65878a // indirect
 	google.golang.org/grpc v1.82.1 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
