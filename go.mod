@@ -1,6 +1,6 @@
 module github.com/pivotal-cf/winfs-injector
 
-go 1.26.4
+go 1.26.5
 
 require (
 	code.cloudfoundry.org/archiver v0.82.0
