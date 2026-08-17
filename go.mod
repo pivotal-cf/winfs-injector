@@ -4,7 +4,7 @@ go 1.26.5
 
 require (
 	code.cloudfoundry.org/archiver v0.82.0
-	code.cloudfoundry.org/hydrator v0.93.0
+	code.cloudfoundry.org/hydrator v0.99.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.10.8
 	github.com/cloudfoundry/bosh-utils v0.0.631
 	github.com/onsi/ginkgo/v2 v2.32.0
