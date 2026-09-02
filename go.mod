@@ -3,7 +3,7 @@ module github.com/pivotal-cf/winfs-injector
 go 1.26.5
 
 require (
-	code.cloudfoundry.org/archiver v0.82.0
+	code.cloudfoundry.org/archiver v0.85.0
 	code.cloudfoundry.org/hydrator v0.99.0
 	github.com/cloudfoundry/bosh-cli/v7 v7.10.10
 	github.com/cloudfoundry/bosh-utils v0.0.636
@@ -74,7 +74,7 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-task/slim-sprig/v3 v3.0.0 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
-	github.com/google/pprof v0.0.0-20260802141513-ef3492d7dac3 // indirect
+	github.com/google/pprof v0.0.0-20260824235931-c0b50f2f6510 // indirect
 	github.com/google/s2a-go v0.1.9 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.21 // indirect
